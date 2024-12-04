@@ -1,3 +1,5 @@
+import numpy as np
+
 """
 A module with simple function
 """
@@ -21,3 +23,7 @@ def add(a: int, b: int) -> int:
 def multiply(a: int, b: int) -> int:
     """Multiply two numbers"""
     return a * b
+
+
+def rms(input_array: np.ndarray) -> float:
+    pass
