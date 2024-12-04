@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ees-scientific-software-engineering"
 authors = [
-  {name = "Tony Xiang",email = "y.xiang@tue.nl"},
+  {name = "An Nguyen",email = "a.nguyen.huu.thien@tue.nl"},
   {name = "Peter Salemink", email = "p.j.salemink@tue.nl"}
 ]
 description = "Training project for scientific software engineering"
