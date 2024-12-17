@@ -1,8 +1,8 @@
-import numpy as np
-
 """
 A module with simple function
 """
+
+import numpy as np
 
 
 def add(a: int, b: int) -> int:
