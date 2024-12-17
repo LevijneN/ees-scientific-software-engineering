@@ -27,6 +27,8 @@ def multiply(a: int, b: int) -> int:
 
 def rms(input_array: np.ndarray) -> float:
     """enable doc. check"""
+    if not isinstance(input_array, np.ndarray):
+        raise TypeError("Arguments should be np.ndarray!")
     if np.ndim(input_array) != 1:
         raise TypeError("Dimension of array should be 1")
 

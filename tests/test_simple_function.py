@@ -24,6 +24,12 @@ def test_rms():
     assert rms(array_test) == 1.0
 
 
+def test_rms_error_ndarray():
+    array_test = 1.0
+    with pytest.raises(TypeError, match="Arguments should be np.ndarray!"):
+        rms(array_test)
+
+
 def test_rms_error_dimension():
     array_dimension_test = np.array([[1.0, 1.0], [1.0, 1.0]])
     with pytest.raises(TypeError, match="Dimension of array should be 1"):
