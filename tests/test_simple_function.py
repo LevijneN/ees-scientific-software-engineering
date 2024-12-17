@@ -52,3 +52,9 @@ def test_rms_error_size_at_least_1():
     input_array = np.array([])
     with pytest.raises(TypeError, match="The size of input_array should be at least 1!"):
         rms(input_array)
+
+
+def test_rms_has_NaN():
+    input_array = np.array([np.nan, 1])
+    with pytest.raises(TypeError, match="Array must not have NaN!"):
+        rms(input_array)
