@@ -27,7 +27,7 @@ def multiply(a: int, b: int) -> int:
 
 def rms(input_array: np.ndarray) -> float:
     """enable doc. check"""
-    if not isinstance(input_array,np.ndarray):
+    if not isinstance(input_array, np.ndarray):
         raise TypeError("Arguments should be np.ndarray!")
     squared = np.square(input_array)  # Step 1: Square each element
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values

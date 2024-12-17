@@ -23,7 +23,8 @@ def test_rms():
     array_test = np.array([1.0, 1.0, 1.0])
     assert rms(array_test) == 1.0
 
+
 def test_rms_error_ndarray():
-    array_test=1.0
+    array_test = 1.0
     with pytest.raises(TypeError, match="Arguments should be np.ndarray!"):
         rms(array_test)
