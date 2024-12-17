@@ -27,6 +27,9 @@ def multiply(a: int, b: int) -> int:
 
 def rms(input_array: np.ndarray) -> float:
     """enable doc. check"""
+    if np.ndim(input_array) != 1:
+        raise TypeError("Dimension of array should be 1")
+
     squared = np.square(input_array)  # Step 1: Square each element
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values
     rms_result = np.sqrt(mean_of_squares)  # Step 3: Take the square root
