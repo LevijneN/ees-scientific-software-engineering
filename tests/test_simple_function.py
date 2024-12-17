@@ -1,6 +1,7 @@
+import numpy as np
 import pytest
 
-from ees_scientific_software_engineering.simple_function import add, multiply
+from ees_scientific_software_engineering.simple_function import add, multiply, rms
 
 
 def test_add():
@@ -16,3 +17,8 @@ def test_add_error():
     b = 1
     with pytest.raises(TypeError, match="Arguments should be integers!"):
         add(a, b)
+
+
+def test_rms():
+    array_test = np.array([1.0, 1.0, 1.0])
+    assert rms(array_test) == 1.0
