@@ -42,6 +42,12 @@ def test_rms_error_float():
         rms(array_test)
 
 
+def test_rms_error_float():
+    array_test = np.array([1, 1], dtype="int32")
+    with pytest.raises(TypeError, match="Array must only contain float64"):
+        rms(array_test)
+
+
 def test_rms_error_size_at_least_1():
     input_array = np.array([])
     with pytest.raises(TypeError, match="The size of input_array should be at least 1!"):
