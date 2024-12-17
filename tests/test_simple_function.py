@@ -52,3 +52,8 @@ def test_rms_error_size_at_least_1():
     input_array = np.array([])
     with pytest.raises(TypeError, match="The size of input_array should be at least 1!"):
         rms(input_array)
+
+def test_rms_error_inf():
+    input_array = np.array([1.0, 2.0, np.inf], dtype=np.float64)
+    with pytest.raises(ValueError, match="The input_array should not contain any infinite \\(inf\\) values!"):
+        rms(input_array)

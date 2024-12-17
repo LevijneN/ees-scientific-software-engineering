@@ -36,6 +36,9 @@ def rms(input_array: np.ndarray) -> float:
 
     if len(input_array) == 0:
         raise TypeError("The size of input_array should be at least 1!")
+    
+    if np.any(np.isinf(input_array)):
+        raise ValueError("The input_array should not contain any infinite (inf) values!")
 
     squared = np.square(input_array)  # Step 1: Square each element
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values
