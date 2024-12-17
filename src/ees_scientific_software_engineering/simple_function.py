@@ -37,7 +37,7 @@ def rms(input_array: np.ndarray) -> float:
         raise TypeError("The size of input_array should be at least 1!")
     if np.any(np.isnan(input_array)):
         raise TypeError("Array must not have NaN!")
-    
+
     if np.any(np.isinf(input_array)):
         raise ValueError("The input_array should not contain any infinite (inf) values!")
 
