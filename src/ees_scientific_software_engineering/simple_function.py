@@ -47,6 +47,7 @@ def rms(input_array: np.ndarray) -> float:
     rms_result = np.sqrt(mean_of_squares)  # Step 3: Take the square root
     return rms_result
 
+
 class LUSolver:
     def __init__(self, input_matrix: np.ndarray):
         """
