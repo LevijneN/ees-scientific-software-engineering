@@ -1,4 +1,5 @@
 import numpy as np
+
 """
 A module with simple function
 """
@@ -25,7 +26,7 @@ def multiply(a: int, b: int) -> int:
 
 
 def rms(input_array: np.ndarray) -> float:
-    squared = np.square(array)  # Step 1: Square each element
+    squared = np.square(input_array)  # Step 1: Square each element
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values
     rms = np.sqrt(mean_of_squares)  # Step 3: Take the square root
     return rms
