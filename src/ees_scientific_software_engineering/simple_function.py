@@ -31,5 +31,3 @@ def rms(input_array: np.ndarray) -> float:
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values
     rms_result = np.sqrt(mean_of_squares)  # Step 3: Take the square root
     return rms_result
-
-
