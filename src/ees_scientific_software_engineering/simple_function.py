@@ -3,6 +3,7 @@ A module with simple function
 """
 
 import numpy as np
+from scipy.linalg import lu_factor, lu_solve
 
 
 def add(a: int, b: int) -> int:
@@ -45,3 +46,23 @@ def rms(input_array: np.ndarray) -> float:
     mean_of_squares = np.mean(squared)  # Step 2: Compute the mean of the squared values
     rms_result = np.sqrt(mean_of_squares)  # Step 3: Take the square root
     return rms_result
+
+
+class LUSolver:
+    def __init__(self, input_matrix: np.ndarray):
+        """
+        Constructor of the class. It takes the input matrix and decomposes it into LU factorization.
+        Stores the LU decomposition and permutation matrix.
+        """
+        if not isinstance(input_matrix, np.ndarray):
+            raise TypeError("Arguments should be np.ndarray!")
+        self.lu, self.piv = lu_factor(input_matrix)  # Perform LU decomposition and store LU and pivot indices
+
+    def solve(self, b: np.ndarray) -> np.ndarray:
+        """
+        Solve the linear equation Ax = b using the stored LU decomposition.
+        :param b: Right-hand side vector
+        :return: Solution vector x
+        """
+        x = lu_solve((self.lu, self.piv), b)  # Solve for x using LU decomposition and b
+        return x

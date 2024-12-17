@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from ees_scientific_software_engineering.simple_function import add, multiply, rms
+from ees_scientific_software_engineering.simple_function import LUSolver, add, multiply, rms
 
 
 def test_add():
@@ -64,3 +64,9 @@ def test_rms_error_inf():
     input_array = np.array([1.0, 2.0, np.inf], dtype=np.float64)
     with pytest.raises(ValueError, match="The input_array should not contain any infinite \\(inf\\) values!"):
         rms(input_array)
+
+
+def test_LUSolver_error_ndarray():
+    input_matrix = 1.0
+    with pytest.raises(TypeError, match="Arguments should be np.ndarray!"):
+        LUSolver(input_matrix)
