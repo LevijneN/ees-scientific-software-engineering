@@ -31,7 +31,8 @@ dev = [
   'isort',
   'pylint',
   'pytest-cov',
-  'mypy'
+  'mypy',
+  'scipy'
 ]
 
 [tool.setuptools.packages.find]
