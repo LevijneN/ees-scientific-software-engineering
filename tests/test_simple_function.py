@@ -37,6 +37,6 @@ def test_rms_error_dimension():
 
 
 def test_rms_error_float():
-    array_test = np.array([1, 1], dtype='int32')
+    array_test = np.array([1, 1], dtype="int32")
     with pytest.raises(TypeError, match="Array must only contain float64"):
         rms(array_test)
